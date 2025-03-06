@@ -17,12 +17,12 @@ class MovieController {
         res.json(newMovie);
     };
 
-    deleteMovieById = ({params: { id }}, res) => {
-        const sucesso = movieModel.deleteMovieById(id);
+    deleteMovieById = ({ params: { id } }, res) => {
+        const sucesso = movieModel.deleteMovieById(parseInt(id));
         if (!sucesso) {
             res.status(404).send('Filme não encontrado');
         }
         res.status(200).send(sucesso);
-    }
+    };
 }
 export default new MovieController();

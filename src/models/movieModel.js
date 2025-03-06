@@ -30,8 +30,9 @@ class MovieModel {
         const index = this.movies.findIndex((movie) => movie.id === id);
         if (index !== -1) {
             this.movies.splice(index, 1);
-            return message = `Filme com id ${id} deletado com sucesso!`;
-        };
+            return `Filme com id ${id} deletado com sucesso!`;
+        }
+        return null;
     };
 };
 
